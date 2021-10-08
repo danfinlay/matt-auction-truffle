@@ -55,7 +55,7 @@ contract("MattAuction", accounts => {
 
     console.log(`signature: ${signature}`);
 
-    const verified = debug(await mattAuctionInstance.verifyBidSignature(nft, bidderAddress, currencyTokenAddress, currencyTokenAmount, signature));
+    const verified = await debug(mattAuctionInstance.verifyBidSignature(nft, bidderAddress, currencyTokenAddress, currencyTokenAmount, signature));
     assert(verified, 'signature is verified');
   });
 });
